@@ -1,0 +1,35 @@
+# Entornos virtuales de Python
+.venv/
+venv/
+ENV/
+env/
+
+# Archivos compilados y cachés de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Datos crudos y procesados (buena práctica: no subir datasets pesados al repo)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Modelos exportados y artefactos
+models/*
+!models/.gitkeep
+
+# MLflow tracking local
+mlruns/
+.mlflow/
+
+# Prefect
+.prefect/
+
+# Variables de entorno o secretos
+.env
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
