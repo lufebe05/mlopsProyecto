@@ -1,5 +1,5 @@
 [project]
-name = "mlops-proyecto-vehiculos"
+name = "mlopsProyecto"
 version = "0.1.0"
 description = "Pipeline End-to-End para prediccion de precios de vehiculos usados"
 readme = "README.md"

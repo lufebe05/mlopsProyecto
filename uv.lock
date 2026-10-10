@@ -2480,7 +2480,7 @@ wheels = [
 ]
 
 [[package]]
-name = "mlops-proyecto-vehiculos"
+name = "mlopsproyecto"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
