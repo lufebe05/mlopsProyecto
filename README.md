@@ -44,7 +44,7 @@ mlopsProyecto/
 ├── .gitignore              # Archivos y carpetas ignorados por el control de versiones
 ├── pyproject.toml          # Definición del entorno y dependencias del proyecto
 └── README.md               # Documentación general del repositorio
-
+```
 ---
 
 ## 🛠️ Stack Tecnológico
