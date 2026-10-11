@@ -10,7 +10,7 @@ Todos los comandos necesarios para configurar el entorno con `uv`, ejecutar el p
 
 ```bash
 # Clonar el proyecto
-git clone [https://github.com/lufebe05/mlopsProyecto.git](https://github.com/lufebe05/mlopsProyecto.git)
+git clone https://github.com/lufebe05/mlopsProyecto.git
 
 # Entrar al directorio
 cd mlopsProyecto

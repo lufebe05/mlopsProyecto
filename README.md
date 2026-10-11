@@ -2,6 +2,8 @@
 
 Este proyecto implementa una solución completa de **Machine Learning Operations (MLOps)** de extremo a extremo (End-to-End) para la estimación de precios comerciales de vehículos usados. El flujo abarca desde la ingesta de datos, experimentación y tracking con **MLflow**, orquestación con **Prefect**, optimización de hiperparámetros con **Optuna**, hasta el empaquetado y despliegue local mediante una API REST en **FastAPI** con interfaz web servida vía contenedores **Docker**.
 
+**Integrante 1:** Alejandro Ramirez Marin
+**Integrante 2:** Luis Fernando Betancurt 
 ---
 
 ## 📌 Hipótesis y Planteamiento del Problema de Negocio
@@ -92,4 +94,4 @@ El proyecto evalúa modelos lineales y ensambles no lineales transformando el ob
 
 Para consultar el paso a paso detallado con los comandos exactos listos para copiar y ejecutar (instalación, entrenamiento, interfaz visual de MLflow y despliegue local o con Docker), consulta el manual:
 
-👉 **[RUN_GUIDE.md](./guia_ejecucion.md)**
+👉 **[Guia_ejecucion.md](./guia_ejecucion.md)**
