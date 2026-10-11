@@ -44,3 +44,52 @@ mlopsProyecto/
 ├── .gitignore              # Archivos y carpetas ignorados por el control de versiones
 ├── pyproject.toml          # Definición del entorno y dependencias del proyecto
 └── README.md               # Documentación general del repositorio
+
+---
+
+## 🛠️ Stack Tecnológico
+
+| Componente | Herramienta | Rol en el Proyecto |
+| :--- | :--- | :--- |
+| **Entorno y Dependencias** | Python 3.11+, `uv` | Gestión determinista de paquetes y entornos virtuales |
+| **Procesamiento y Modelado** | scikit-learn, pandas, numpy | Pipelines de transformación, regresión y métricas de negocio |
+| **Tracking de Experimentos** | MLflow (backend SQLite) | Registro estructurado de parámetros, métricas y artefactos serializados |
+| **Optimización de Hiperparámetros** | Optuna | Búsqueda bayesiana (TPE) con validación cruzada anidada |
+| **Servicio e Inferencia** | FastAPI, Jinja2, Uvicorn | Endpoint REST y renderizado del formulario web para cotización |
+| **Contenedorización** | Docker | Empaquetado portable y reproducible de la solución web |
+| **Control de Versiones** | Git | Trazabilidad del código fuente |
+
+---
+
+## 🔬 Flujo de Modelado y Resultados
+
+El proyecto evalúa modelos lineales y ensambles no lineales transformando el objetivo comercial mediante $\log(1 + y)$ para estabilizar la varianza, reportando métricas tanto en la escala logarítmica como en la escala real de rupias indias (INR):
+
+### Tabla Comparativa de Desempeño
+
+| Iteración | Modelo | Test RMSE (INR) | Test MAE (INR) | Test $R^2$ (Real) | Test $R^2$ (Log) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **01 (Baseline)** | Ridge Regression | 377,865.46 | 157,680.44 | 0.5568 | 0.7574 |
+| **02 (Ensamble)** | Random Forest Regressor | 327,739.11 | 145,244.37 | 0.6666 | 0.7710 |
+| **03 (Optimizado)** | **Random Forest (Tuned)** | **328,680.44** | **145,388.37** | **0.6646** | **0.7708** |
+
+### Hallazgos de la Optimización Bayesiana (Optuna)
+- **Mejor Trial:** `Trial_23` (CV RMSE: 273,029.58 INR con validación cruzada $k=5$).
+- **Configuración ganadora:** `n_estimators: 150`, `max_depth: 20`, `min_samples_split: 8`, `min_samples_leaf: 1`, `max_features: 0.92`.
+- **Conclusión técnica:** El ensamble captura adecuadamente las no-linealidades observadas durante el análisis exploratorio frente al modelo lineal, logrando un balance que previene el sobreajuste.
+
+---
+
+## 📦 Artefactos Generados
+
+- `models/preprocessor.joblib`: Objeto `ColumnTransformer` ajustado para imputación, codificación One-Hot de variables categóricas, escalado estándar y homologación de marcas vehiculares.
+- `models/random_forest_tuned.joblib`: Modelo final entrenado y calibrado con los hiperparámetros óptimos.
+- `mlflow.db`: Base de datos SQLite local que contiene el historial completo de corridas, métricas comparativas y artefactos de experimentación.
+
+---
+
+## ⚡ Guía de Ejecución
+
+Para consultar el paso a paso detallado con los comandos exactos listos para copiar y ejecutar (instalación, entrenamiento, interfaz visual de MLflow y despliegue local o con Docker), consulta el manual:
+
+👉 **[RUN_GUIDE.md](./guia_ejecucion.md)**
